@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  transition: 0.3s ease;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.profile-menu {
+  cursor: pointer;
+}
+
+.search-box {
+  cursor: pointer;
+}
+
+.listing-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.dark-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #eee;
+  border-radius: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 70px;
+  /* Header ke neeche show hoga */
+  right: 20px;
+  background-color: #fff;
+  color: #333;
+  padding: 10px 12px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#dark-toggle:checked+.dark-mode-toggle {
+  background-color: #333;
+  color: white;
+}
+
+
+#dark-toggle:checked~body,
+#dark-toggle:checked~.header,
+#dark-toggle:checked~.hero,
+#dark-toggle:checked~.listings,
+#dark-toggle:checked~.footer {
+  background-color: #121212;
+  color: white;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd;
+  background: inherit;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF385C;
+  cursor: pointer;
+}
+
+.search-box {
+  background-color: #f1f1f1;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+#dark-toggle:checked~.header .search-box {
+  background-color: #333;
+  color: white;
+}
+
+
+
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.profile-menu {
+  background-color: #f1f1f1;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+/* Hero */
+.hero {
+  background: url('https://source.unsplash.com/1600x600/?travel') no-repeat center center/cover;
+  color: black;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+}
+
+/* Listings */
+.listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  background: inherit;
+}
+
+.listing-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  transition: 0.3s;
+}
+
+
+
+#dark-toggle:checked~.listings .listing-card {
+  background-color: #1f1f1f;
+}
+
+.listing-info {
+  padding: 15px;
+}
+
+.listing-info p {
+  color: gray;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  color: gray;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.footer-section ul li:hover {
+  text-decoration: underline;
+}
+
+#dark-toggle:checked~.footer {
+  background-color: #1a1a1a;
+}
+
+#dark-toggle:checked~.footer .footer-section ul li {
+  color: #ccc;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+.footer-bottom span {
+  font-weight: bold;
+  color: #ff385c;
+  /* Airbnb ka signature pinkish color */
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+/* Dark mode ke liye */
+#dark-toggle:checked~.footer {
+  background-color: #222;
+  color: white;
+  border-top: 1px solid #444;
+  cursor: pointer;
+}
+
+
+#dark-toggle:checked~.footer .footer-bottom span {
+  color: #ffb3c1;
+} 
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;  
+    align-items: flex-start; 
+    gap: 80px;            
+  }
+}
